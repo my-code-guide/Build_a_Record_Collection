@@ -21,10 +21,7 @@ const recordCollection = {
 function updateRecords(records, id, prop, value) {
   if (!value) {
     delete records[id][prop]
-    return records
-  }
-
-  if (prop !== 'tracks') {
+  } else if (prop !== 'tracks') {
     records[id][prop] = value
   } else if (prop === 'tracks' && value.length && !records[id][prop]) {
     records[id][prop] = [value]
